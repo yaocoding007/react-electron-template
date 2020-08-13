@@ -1,20 +1,63 @@
 {
-  "name": "react-electron",
-  "version": "0.1.0",
+  "name": "react-electron-cli",
+  "version": "1.0.0",
+  "description": "react-electron-cli",
+  "author": {
+      "name": "Mr.yao"
+  },
   "private": true,
+  "main": "./main.js",
+  "homepage": "./",
+  "scripts": {
+    "start": "react-scripts start",
+    "e-start": "electron ./main.js",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "pack": "build --dir",
+    "dist": "yarn build && rm -rf dist && electron-builder"
+  },
+  "build": {
+    "appId": "yaoToDo",
+    "extends": null,
+    "files": [
+      "./main.js",
+      "./build",
+      "./package.json"
+    ],
+    "dmg": {
+      "contents": [
+        {
+          "x": 110,
+          "y": 150
+        },
+        {
+          "x": 240,
+          "y": 150,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ]
+    },
+    "win": {
+      "target": "squirrel",
+      "icon": "build/icon.ico"
+    }
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "electron-log": "^4.2.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -30,5 +73,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "electron": "^9.1.2",
+    "electron-builder": "^22.7.0"
   }
 }
