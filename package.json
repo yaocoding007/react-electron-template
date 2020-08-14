@@ -3,14 +3,14 @@
   "version": "1.0.0",
   "description": "react-electron-cli",
   "author": {
-      "name": "Mr.yao"
+    "name": "Mr.yao"
   },
   "private": true,
-  "main": "./main.js",
+  "main": "electron/app.js",
   "homepage": "./",
   "scripts": {
     "start": "react-scripts start",
-    "e-start": "electron ./main.js",
+    "e-start": "electron ./electron/app.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
@@ -21,7 +21,7 @@
     "appId": "yaoToDo",
     "extends": null,
     "files": [
-      "./main.js",
+      "./electron",
       "./build",
       "./package.json"
     ],
@@ -54,6 +54,7 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "electron-is-dev": "^1.2.0",
     "electron-log": "^4.2.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
